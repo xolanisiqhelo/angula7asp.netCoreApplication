@@ -1,0 +1,192 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand text-white">System</a>
+  <button class="btn btn-danger my-2 my-sm-0" (click)="onLogout()">Logout</button>
+</nav>
+<div class="register">
+  <div class="row">
+    <div class="col-md-3 register-left" *ngIf="userDetails">
+      <h1>Welcome !!!</h1>
+      <h3>Username :{{userDetails.userName}}</h3>
+      <h3>FullName :{{userDetails.fullname}}</h3>
+      <h3>Email : {{userDetails.email}}</h3>
+
+    </div>
+    <div class="col-md-9 register-right">
+      <ul class="nav nav-tabs nav-justified col-2" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active " id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+            aria-selected="true">Add </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+            aria-selected="false">List </a>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <h3 class="register-heading"> Add Customer </h3>
+          <form #form="ngForm" (submit)="onSubmit(form)">
+              <!-- <input type="hidden" name="id" [value]="service.formData.CMId"> -->
+            <div class="row register-form">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <i class="fas fa-user-circle" [class.green-icon]="FirstName.valid"
+                    [class.red-icon]="FirstName.invalid && FirstName.touched"></i>
+                  <input name="FirstName" #FirstName="ngModel" [(ngModel)]="service.formData.FirstName"
+                    class="form-control" placeholder="First name" required>
+                </div>
+                <div class="form-group">
+                  <i class="far fa-credit-card" [class.green-icon]="LastName.valid"
+                    [class.red-icon]="LastName.invalid && LastName.touched"></i>
+                  <input name="LastName" #LastName="ngModel" [(ngModel)]="service.formData.LastName"
+                    class="form-control" placeholder="LastName" required>
+                </div>
+                <div class="form-group ">
+                  <i class="fas fa-calendar-alt" [class.green-icon]="CellPhone.valid"
+                    [class.red-icon]="CellPhone.invalid && CellPhone.touched"></i>
+                  <input name="CellPhone" #CellPhone="ngModel" [(ngModel)]="service.formData.CellPhone"
+                    class="form-control" placeholder="000 000 0000">
+                </div>
+                <div class="form-group">
+                  <i class="fas fa-key" [class.green-icon]="EmailAddress.valid"
+                    [class.red-icon]="EmailAddress.invalid && EmailAddress.touched"></i>
+                  <input type="email" name="EmailAddress" #EmailAddress="ngModel"
+                    [(ngModel)]="service.formData.EmailAddress" class="form-control" placeholder="EmailAddress"
+                    required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group ">
+                  <i class="fas fa-key" [class.green-icon]="ResidentialAddress.valid"
+                    [class.red-icon]="ResidentialAddress.invalid && ResidentialAddress.touched"></i>
+                  <input type="text" name="ResidentialAddress" #ResidentialAddress="ngModel"
+                    [(ngModel)]="service.formData.ResidentialAddress" class="form-control"
+                    placeholder="ResidentialAddress" required>
+                </div>
+                <div class="form-group ">
+                  <i class="fas fa-key" [class.green-icon]=" City.valid"
+                    [class.red-icon]=" City.invalid &&  City.touched"></i>
+                  <input type="text" name=" City" #City="ngModel" [(ngModel)]="service.formData. City"
+                    class="form-control" placeholder=" City" required>
+                </div>
+                <div class="form-group">
+
+                  <i class="fas fa-key" [class.green-icon]=" PostalCode.valid"
+                    [class.red-icon]=" PostalCode.invalid &&  PostalCode.touched"></i>
+
+                  <input type="text" name=" PostalCode" #PostalCode="ngModel" [(ngModel)]="service.formData. PostalCode"
+                    class="form-control" placeholder=" PostalCode" required>
+                </div>
+                <button class="btn btn-primary w-100" type="submit" [disabled]="form.invalid"> Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <div *ngIf="!isUpdateCustomer">
+            <h3 class="register-heading mb-3">Customers details</h3>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col-4">Name</th>
+                  <th scope="col">Surname</th>
+                  <th scope="col">CellPhone</th>
+                  <th scope="col">Email address</th>
+                  <th scope="col">Residential Address</th>
+                  <th scope="col">City</th>
+                  <th scope="col">Code</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let pd of service.list">
+                  <td >{{pd.FirstName}}</td>
+                  <td >{{pd.LastName}}</td>
+                  <td >{{pd.CellPhone}}</td>
+                  <td >{{pd.EmailAddress}}</td>
+                  <td >{{pd.ResidentialAddress}}</td>
+                  <td >{{pd.City}}</td>
+                  <td >{{pd.PostalCode}}</td>
+                  <td>
+                    <a class="material-icons text-primary" (click)="editCutomer(pd)">edit</a>
+                  </td>
+
+                  <td>
+                    <i class="material-icons text-danger" (click)="onDelete(pd.CMId)">delete</i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div *ngIf="isUpdateCustomer">
+            <h3 class="register-heading"> Update Customer </h3>
+            <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+                <input type="hidden" name="id" [value]="service.formData.CMId">
+                <div class="row register-form">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <i class="fas fa-user-circle" [class.green-icon]="FirstName.valid"
+                        [class.red-icon]="FirstName.invalid && FirstName.touched"></i>
+                      <input name="FirstName" #FirstName="ngModel" [(ngModel)]="service.formData.FirstName"
+                        class="form-control" placeholder="First name" required>
+                    </div>
+                    <div class="form-group">
+                      <i class="far fa-credit-card" [class.green-icon]="LastName.valid"
+                        [class.red-icon]="LastName.invalid && LastName.touched"></i>
+                      <input name="LastName" #LastName="ngModel" [(ngModel)]="service.formData.LastName"
+                        class="form-control" placeholder="LastName" required>
+                    </div>
+                    <div class="form-group ">
+                      <i class="fas fa-calendar-alt" [class.green-icon]="CellPhone.valid"
+                        [class.red-icon]="CellPhone.invalid && CellPhone.touched"></i>
+                      <input name="CellPhone" #CellPhone="ngModel" [(ngModel)]="service.formData.CellPhone"
+                        class="form-control" placeholder="000 000 0000">
+                    </div>
+                    <div class="form-group">
+                      <i class="fas fa-key" [class.green-icon]="EmailAddress.valid"
+                        [class.red-icon]="EmailAddress.invalid && EmailAddress.touched"></i>
+                      <input type="email" name="EmailAddress" #EmailAddress="ngModel"
+                        [(ngModel)]="service.formData.EmailAddress" class="form-control" placeholder="EmailAddress"
+                        required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group ">
+                      <i class="fas fa-key" [class.green-icon]="ResidentialAddress.valid"
+                        [class.red-icon]="ResidentialAddress.invalid && ResidentialAddress.touched"></i>
+                      <input type="text" name="ResidentialAddress" #ResidentialAddress="ngModel"
+                        [(ngModel)]="service.formData.ResidentialAddress" class="form-control"
+                        placeholder="ResidentialAddress" required>
+                    </div>
+                    <div class="form-group ">
+                      <i class="fas fa-key" [class.green-icon]=" City.valid"
+                        [class.red-icon]=" City.invalid &&  City.touched"></i>
+                      <input type="text" name=" City" #City="ngModel" [(ngModel)]="service.formData. City"
+                        class="form-control" placeholder=" City" required>
+                    </div>
+                    <div class="form-group">
+    
+                      <i class="fas fa-key" [class.green-icon]=" PostalCode.valid"
+                        [class.red-icon]=" PostalCode.invalid &&  PostalCode.touched"></i>
+    
+                      <input type="text" name=" PostalCode" #PostalCode="ngModel" [(ngModel)]="service.formData. PostalCode"
+                        class="form-control" placeholder=" PostalCode" required>
+                    </div>
+                    <button class="btn btn-primary w-100" type="submit" [disabled]="form.invalid"> Submit</button>
+                  </div>
+                </div>
+              </form>
+
+
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>

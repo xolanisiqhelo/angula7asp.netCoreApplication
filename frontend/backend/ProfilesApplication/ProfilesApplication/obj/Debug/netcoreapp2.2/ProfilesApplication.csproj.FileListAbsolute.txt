@@ -1,0 +1,14 @@
+C:\folder\API's\c#\ProfilesApplication\ProfilesApplication\bin\Debug\netcoreapp2.2\ProfilesApplication.deps.json
+C:\folder\API's\c#\ProfilesApplication\ProfilesApplication\bin\Debug\netcoreapp2.2\ProfilesApplication.runtimeconfig.json
+C:\folder\API's\c#\ProfilesApplication\ProfilesApplication\bin\Debug\netcoreapp2.2\ProfilesApplication.runtimeconfig.dev.json
+C:\folder\API's\c#\ProfilesApplication\ProfilesApplication\bin\Debug\netcoreapp2.2\ProfilesApplication.dll
+C:\folder\API's\c#\ProfilesApplication\ProfilesApplication\bin\Debug\netcoreapp2.2\ProfilesApplication.pdb
+C:\folder\API's\c#\ProfilesApplication\ProfilesApplication\obj\Debug\netcoreapp2.2\ProfilesApplication.csproj.CoreCompileInputs.cache
+C:\folder\API's\c#\ProfilesApplication\ProfilesApplication\obj\Debug\netcoreapp2.2\ProfilesApplication.RazorAssemblyInfo.cache
+C:\folder\API's\c#\ProfilesApplication\ProfilesApplication\obj\Debug\netcoreapp2.2\ProfilesApplication.RazorAssemblyInfo.cs
+C:\folder\API's\c#\ProfilesApplication\ProfilesApplication\obj\Debug\netcoreapp2.2\ProfilesApplication.AssemblyInfoInputs.cache
+C:\folder\API's\c#\ProfilesApplication\ProfilesApplication\obj\Debug\netcoreapp2.2\ProfilesApplication.AssemblyInfo.cs
+C:\folder\API's\c#\ProfilesApplication\ProfilesApplication\obj\Debug\netcoreapp2.2\ProfilesApplication.RazorTargetAssemblyInfo.cache
+C:\folder\API's\c#\ProfilesApplication\ProfilesApplication\obj\Debug\netcoreapp2.2\ProfilesApplication.dll
+C:\folder\API's\c#\ProfilesApplication\ProfilesApplication\obj\Debug\netcoreapp2.2\ProfilesApplication.pdb
+C:\folder\API's\c#\ProfilesApplication\ProfilesApplication\obj\Debug\netcoreapp2.2\ProfilesApplication.csprojAssemblyReference.cache

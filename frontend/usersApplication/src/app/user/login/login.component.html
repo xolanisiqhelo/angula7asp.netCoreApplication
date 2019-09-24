@@ -1,0 +1,21 @@
+<form  #form='ngForm' class="mb-4" autocomplete="off" (submit)="onSubmit(form)">
+  <div  class="login100-form validate-form">
+    <span class="login100-form-title">
+      Member Login
+    </span>
+    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+      <input class="input100" type="text" name="UserName"  #UserName="ngModel"  placeholder="UserName" [(ngModel)]="formModel.UserName" required>
+    </div>
+    <div class="wrap-input100 validate-input" data-validate = "Password is required">
+      <input class="input100" type="password" name="password"  #Password="ngModel" placeholder="Password" [(ngModel)]="formModel.Password" required>
+    </div>
+    <div class="container-login100-form-btn">
+      <button class="login100-form-btn" type="submit"[disabled]="form.invalid">Login </button>
+    </div>
+    <div class="text-center mt-4">
+      <a class="txt2" routerLink="/user/registration">
+        <p class="text-primary"><strong> Need account? Create new  account</strong></p> 
+      </a>
+    </div>
+  </div>
+  </form>

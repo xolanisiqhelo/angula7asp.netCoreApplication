@@ -1,0 +1,47 @@
+
+<form [formGroup]="service.formModel"  (submit)="onSubmit()" >
+  <div class="login100-form validate-form">
+    <span class="login100-form-title">
+       New Member 
+    </span>
+    <div class="wrap-input100 validate-input">
+      <input class="input100" type="text" name="username" placeholder="username" formControlName="UserName">
+      <label class="text-danger" *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">This
+          field is mandatory.</label>
+    </div>
+    <div class="wrap-input100 validate-input" data-validate = "Password is required">
+      <input class="input100" type="email" name="email" placeholder="email" formControlName="Email">
+      <label class="text-danger" *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email">Invalid
+          email address.</label>
+    
+    </div>
+    <div class="wrap-input100 validate-input" >
+        <input class="input100" type="text" name="pass" placeholder="fullname" formControlName="FullName">
+      
+      </div>
+    <div class="wrap-input100 validate-input" formGroupName="Passwords">
+        <input class="input100" type="password" name="password" placeholder="password" formControlName="Password">
+        <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">This
+            field is mandatory.</label>
+          <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">Minimum
+            4 characters required.</label>
+      </div>
+      <div class="wrap-input100 validate-input"  formGroupName="Passwords">
+        <input class="input100" type="password" name="password" placeholder="comfirm password" formControlName="ConfirmPassword">
+        <input type="password" name="comfirm-password" id="comfirm-password" class="input-text" formControlName="ConfirmPassword"  >
+        <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">This
+          field is mandatory.</label>
+        <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">Confirm
+          Password does not match.</label>
+      </div>
+    <div class="container-login100-form-btn">
+      <button class="login100-form-btn" type="submit" [disabled]="!service.formModel.valid">Register</button>
+    </div>
+    <div class="text-center mt-3">
+      <a class="txt2" routerLink="/user/login">
+        <p class="text-primary"> <strong>Already have account? Sign In</strong></p>
+        
+      </a>
+    </div>
+  </div>
+  </form>

@@ -1,0 +1,14 @@
+C:\folder\API's\c#\CustomersApplication\CustomersApplication\bin\Debug\netcoreapp2.2\CustomersApplication.deps.json
+C:\folder\API's\c#\CustomersApplication\CustomersApplication\bin\Debug\netcoreapp2.2\CustomersApplication.runtimeconfig.json
+C:\folder\API's\c#\CustomersApplication\CustomersApplication\bin\Debug\netcoreapp2.2\CustomersApplication.runtimeconfig.dev.json
+C:\folder\API's\c#\CustomersApplication\CustomersApplication\bin\Debug\netcoreapp2.2\CustomersApplication.dll
+C:\folder\API's\c#\CustomersApplication\CustomersApplication\bin\Debug\netcoreapp2.2\CustomersApplication.pdb
+C:\folder\API's\c#\CustomersApplication\CustomersApplication\obj\Debug\netcoreapp2.2\CustomersApplication.csprojAssemblyReference.cache
+C:\folder\API's\c#\CustomersApplication\CustomersApplication\obj\Debug\netcoreapp2.2\CustomersApplication.csproj.CoreCompileInputs.cache
+C:\folder\API's\c#\CustomersApplication\CustomersApplication\obj\Debug\netcoreapp2.2\CustomersApplication.RazorAssemblyInfo.cache
+C:\folder\API's\c#\CustomersApplication\CustomersApplication\obj\Debug\netcoreapp2.2\CustomersApplication.RazorAssemblyInfo.cs
+C:\folder\API's\c#\CustomersApplication\CustomersApplication\obj\Debug\netcoreapp2.2\CustomersApplication.AssemblyInfoInputs.cache
+C:\folder\API's\c#\CustomersApplication\CustomersApplication\obj\Debug\netcoreapp2.2\CustomersApplication.AssemblyInfo.cs
+C:\folder\API's\c#\CustomersApplication\CustomersApplication\obj\Debug\netcoreapp2.2\CustomersApplication.RazorTargetAssemblyInfo.cache
+C:\folder\API's\c#\CustomersApplication\CustomersApplication\obj\Debug\netcoreapp2.2\CustomersApplication.dll
+C:\folder\API's\c#\CustomersApplication\CustomersApplication\obj\Debug\netcoreapp2.2\CustomersApplication.pdb
